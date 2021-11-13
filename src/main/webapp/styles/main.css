@@ -1,0 +1,154 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* max szerokość kolumny 1200px i wyśrodkowanie */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* pozbywamy się podkreśleń linków */
+a {
+    text-decoration: none;
+}
+
+/* logo po lewej, przycisk logowania po prawej */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+/* kolorowe logo */
+.logo {
+    color: #007AFF;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+
+.login-button {
+    background-color: #007AFF;
+    color: white;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: .1em;
+}
+
+
+.login-button:hover {
+    opacity: 80%;
+}
+
+
+.categories > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.categories > ul > li {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-weight: 500;
+    border: 1px solid;
+    color: black;
+    opacity: 0.8;
+}
+
+
+.categories > ul > li:hover {
+    opacity: 1;
+}
+
+
+.categories > ul > li > a {
+    color: inherit;
+    display: block;
+    text-align: center;
+}
+
+
+.categories > ul > li {
+    background-color: #5856D6;
+}
+
+
+.categories > ul > li:nth-child(3n) {
+    background-color: #FF2D55;
+}
+
+.categories > ul > li:nth-child(3n+1) {
+    background-color: #5856D6;
+}
+
+.categories > ul > li:nth-child(3n+2) {
+    background-color: #FF9500;
+}
+
+
+.discovery {
+    border: 1px solid #757575;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 16px;
+}
+
+.discovery-header {
+    margin: 0;
+}
+
+.discovery-details {
+    color: black;
+    font-size: 0.8rem;
+}
+
+
+.discovery-link,
+.discovery-link:visited {
+    color: #007AFF;
+    word-wrap: break-word;
+}
+
+
+.discovery-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+
+.discovery-votes {
+    display: inline;
+    color: #007AFF;
+}
+
+
+.discovery-bar > p {
+    margin: 0 4px;
+}
+
+
+.upvote:hover {
+    color: green;
+}
+
+.downvote:hover {
+    color: red;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
