@@ -1,6 +1,7 @@
 package pl.alex.devnote.domain.category;
 
 import pl.alex.devnote.config.DataSourceProvider;
+import pl.alex.devnote.domain.common.MainDAO;
 
 
 import javax.naming.NamingException;
@@ -10,20 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CategoryDAO {
-    private final DataSource dataSource;
-
-    public CategoryDAO() {
-        try {
-            this.dataSource = DataSourceProvider.getDataSource();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
-        }
-    }
+public class CategoryDAO extends MainDAO {
 
     public List<Category> findAllCategories() {
         final String getAllSQL = "SELECT id, name, description FROM category";
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              Statement statement = connection.createStatement()) {
             List<Category> categories = new ArrayList<>();
             ResultSet resultSet = statement.executeQuery(getAllSQL);
@@ -40,7 +32,7 @@ public class CategoryDAO {
 
     public Optional<Category> findCategoryById(int categoryId){
         final String getCategoryById = "SELECT id, name, description FROM category WHERE id=?";
-        try(Connection connection = dataSource.getConnection();
+        try(Connection connection = getConnection();
             PreparedStatement statement = connection.prepareStatement(getCategoryById)){
             statement.setInt(1,categoryId);
             ResultSet resultSet = statement.executeQuery();
