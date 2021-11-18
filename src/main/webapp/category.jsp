@@ -22,13 +22,9 @@
         <a href="#" class="login-button">Log in</a>
     </nav>
 
-    <aside class="categories">
-        <ul>
-            <c:forEach var="category" items="${requestScope.categories}">
-            <li><a href="${pageContext.request.contextPath.concat('/category?id=').concat(category.id)}">${category.name}</a></li>
-            </c:forEach>
-        </ul>
-    </aside>
+   <h1>${requestScope.category.name}</h1>
+    <p>${requestScope.category.description}</p>
+
     <main>
         <c:forEach var="discovery" items="${requestScope.discoveries}">
             <article class="discovery">

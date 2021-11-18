@@ -1,10 +1,10 @@
 package pl.alex.devnote.domain.api;
 
-public class CategoryNameDTO {
+public class CategoryDTO {
     private final Integer id;
     private final String name;
 
-    public CategoryNameDTO(Integer id, String name) {
+    public CategoryDTO(Integer id, String name) {
         this.id=id;
         this.name = name;
     }

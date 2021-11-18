@@ -5,12 +5,10 @@ import pl.alex.devnote.config.DataSourceProvider;
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CategoryDAO {
     private final DataSource dataSource;
@@ -38,6 +36,23 @@ public class CategoryDAO {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public Optional<Category> findCategoryById(int categoryId){
+        final String getCategoryById = "SELECT id, name, description FROM category WHERE id=?";
+        try(Connection connection = dataSource.getConnection();
+            PreparedStatement statement = connection.prepareStatement(getCategoryById)){
+            statement.setInt(1,categoryId);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()){
+                Category category = mapResultRow(resultSet);
+                return Optional.of(category);
+            }else {
+                return Optional.empty();
+            }
+        }catch (SQLException e){
+            throw  new RuntimeException(e);
+        }
     }
 
     private Category mapResultRow(ResultSet resultSet) throws SQLException {
