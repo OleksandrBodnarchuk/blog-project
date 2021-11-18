@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <Resource name="jdbc/devnotes"
+    <Resource name="jdbc/devnote"
               type="javax.sql.DataSource"
               username="root"
-              password="password"
+              password="root"
               driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/devnotes?serverTimezone=UTC"/>
-    <Realm className="org.apache.catalina.realm.DataSourceRealm"
-           dataSourceName="jdbc/devnotes"
-           localDataSource="true"
-           userTable="user"
-           userNameCol="username"
-           userCredCol="password"
-           userRoleTable="user_role"
-           roleNameCol="role_name"/>
+              url="jdbc:mysql://localhost:3306/devnote?serverTimezone=UTC"/>
 </Context>
