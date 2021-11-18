@@ -4,19 +4,23 @@ import java.time.LocalDateTime;
 
 public class DiscoveryBasicDTO {
     private final String title;
+    private final LocalDateTime dateAdded;
     private final String url;
     private final String description;
-    private final LocalDateTime dateAdded;
 
-    public DiscoveryBasicDTO(String title, String url, String description, LocalDateTime dateAdded) {
+    public DiscoveryBasicDTO(String title, LocalDateTime dateAdded, String url, String description) {
         this.title = title;
+        this.dateAdded = dateAdded;
         this.url = url;
         this.description = description;
-        this.dateAdded = dateAdded;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public LocalDateTime getDateAdded() {
+        return dateAdded;
     }
 
     public String getUrl() {
@@ -25,9 +29,5 @@ public class DiscoveryBasicDTO {
 
     public String getDescription() {
         return description;
-    }
-
-    public LocalDateTime getDateAdded() {
-        return dateAdded;
     }
 }
