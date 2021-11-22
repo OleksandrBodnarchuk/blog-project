@@ -1,0 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<nav class="navbar">
+    <a href="#" class="logo">
+        <i class="fas fa-paper-plane"></i>
+        DevNotes
+    </a>
+    <a href="#" class="login-button">Log in</a>
+</nav>
+

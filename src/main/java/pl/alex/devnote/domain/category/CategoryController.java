@@ -24,7 +24,7 @@ public class CategoryController extends HttpServlet {
         List<DiscoveryBasicDTO>discoveries = discoveryService.findAllDiscoveriesByCategoryId(id);
         req.setAttribute("category",category);
         req.setAttribute("discoveries",discoveries);
-        req.getRequestDispatcher("category.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/category.jsp").forward(req,resp);
 
     }
 }

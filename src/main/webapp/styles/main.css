@@ -3,18 +3,16 @@ body {
     font-weight: 300;
 }
 
-/* max szerokość kolumny 1200px i wyśrodkowanie */
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* pozbywamy się podkreśleń linków */
 a {
     text-decoration: none;
 }
 
-/* logo po lewej, przycisk logowania po prawej */
+
 .navbar {
     display: flex;
     align-items: center;
@@ -22,7 +20,6 @@ a {
     padding: 16px 0;
 }
 
-/* kolorowe logo */
 .logo {
     color: #007AFF;
     font-size: 2em;
