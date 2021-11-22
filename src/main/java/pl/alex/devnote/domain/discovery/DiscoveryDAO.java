@@ -1,10 +1,9 @@
 package pl.alex.devnote.domain.discovery;
 
-import pl.alex.devnote.config.DataSourceProvider;
+
 import pl.alex.devnote.domain.common.MainDAO;
 
-import javax.naming.NamingException;
-import javax.sql.DataSource;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
