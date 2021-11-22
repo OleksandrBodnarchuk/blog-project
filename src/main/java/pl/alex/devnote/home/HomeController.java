@@ -23,8 +23,8 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<DiscoveryBasicDTO> discoveries = discoveryService.findAllDiscoveries();
         List<CategoryDTO> categories = categoryService.findAllCategories();
-       req.setAttribute("categories", categories);
-       req.setAttribute("discoveries", discoveries);
+        req.setAttribute("categories", categories);
+        req.setAttribute("discoveries", discoveries);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }
