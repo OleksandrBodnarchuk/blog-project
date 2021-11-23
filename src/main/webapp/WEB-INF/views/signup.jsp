@@ -19,15 +19,9 @@
 
     <form action="#" method="post" class="user-form">
         <h2 class="user-form-title">Register on DevNotes</h2>
-        <label>
-            <input name="username" placeholder="User name" required>
-        </label>
-        <label>
-            <input name="email" placeholder="Email" type="email" required>
-        </label>
-        <label>
-            <input name="password" placeholder="Password" type="password" required>
-        </label>
+        <input name="username" placeholder="User name" required>
+        <input name="email" placeholder="Email" type="email" required>
+        <input name="password" placeholder="Password" type="password" required>
         <button class="user-form-button">Register</button>
     </form>
 
