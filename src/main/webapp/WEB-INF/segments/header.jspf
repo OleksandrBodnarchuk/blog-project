@@ -1,10 +1,19 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <nav class="navbar">
-    <a href="#" class="logo">
+    <a href="${pageContext.request.contextPath}" class="logo">
         <i class="fas fa-paper-plane"></i>
         DevNotes
     </a>
-    <a href="#" class="login-button">Log in</a>
+    <c:choose>
+        <c:when test="${empty pageContext.request.userPrincipal}">
+        <a href="${pageContext.request.contextPath}/login" class="login-button">Log in</a>
+        </c:when>
+        <c:when test="${not empty pageContext.request.userPrincipal}">
+            <a href="${pageContext.request.contextPath}/logout" class="login-button">Log out</a>
+        </c:when>
+    </c:choose>
+
 </nav>
 
